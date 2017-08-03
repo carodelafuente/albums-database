@@ -12,7 +12,7 @@ router.post('/add', (req, res) => {
   newAlbum.save(function(err) {
     if (err) console.log("ERROR")
   })
-  res.send("added new album data");
+  res.redirect('/albums');
 })
 
 

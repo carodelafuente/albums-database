@@ -12,20 +12,25 @@
         {{ #albums }}
         <form class="" action="/delete" method="post">
           <li>
-          <span>Title:</span>
-          <input type="text" class="title" value={{ title }}>
-          <span>Artist:</span>
-          <input type="text" class="artist" value={{ artist }}>
-          <span>Year:</span>
-          <input type="text" class="year" value={{ year }}>
-          <span>Genre(s):</span>
-          <input type="text" class="genre" value={{ genre }}>
-          <span>Did it go platinum?</span>
-          <input type="text" class="platinumStatus" value={{ platinumStatus }}>
-          <span>Copies sold:</span>
-          <input type="text" class="copiesSold" value={{ copiesSold }}>
+          <h4>Title:</h4>
+          <span>{{ title }}</span>
+          <h4>Artist:</h4>
+          <span> {{ artist }} </span>
+          <h4>Year:</h4>
+          <span> {{ year }} </span>
+          <h4>Genre(s):</h4>
+          <span> {{ genre }} </span>
+          <h4>Did it go platinum?</h4>
+          {{ #platinumStatus }}
+          <span> yes </span>
+          {{ /platinumStatus }}
+          {{ ^platinumStatus }}
+          <span> no </span>
+          {{ /platinumStatus }}
+          <h4>Copies sold:</h4>
+          <span> {{ copiesSold }} </span>
           <button type='submit' name="_id" class='delete' value={{ _id }}> Delete Album </button>
-          <button type='submit' name="_id" class='edit' value={{ _id }}> Edit Album </button>
+          <button type='submit' name="edit" class='edit'> <a href="/edit/{{ _id }}"> Edit Album  </a></button>
         </li>
         </form>
         {{ /albums }}

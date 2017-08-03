@@ -23,6 +23,7 @@ form {
   border-radius: 5px;
 }
 
+
 input, button {
   width: 300px;
 }
@@ -37,7 +38,9 @@ button {
   font-family: courier;
 }
 
-
+span {
+  color: indianred;
+}
 
 .albums {
   display: flex;

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/public/stylesheets/styles.css">
+    <title>albums</title>
+  </head>
+  <body>
+    <section class='albums'>
+      <h2>Albums:</h2>
+      <ul>
+        {{ #albums }}
+        <form class="" action="/delete" method="post">
+          <li>
+          <span>Title:</span>
+          <input type="text" class="title" value={{ title }}>
+          <span>Artist:</span>
+          <input type="text" class="artist" value={{ artist }}>
+          <span>Year:</span>
+          <input type="text" class="year" value={{ year }}>
+          <span>Genre(s):</span>
+          <input type="text" class="genre" value={{ genre }}>
+          <span>Did it go platinum?</span>
+          <input type="text" class="platinumStatus" value={{ platinumStatus }}>
+          <span>Copies sold:</span>
+          <input type="text" class="copiesSold" value={{ copiesSold }}>
+          <button type='submit' name="_id" class='delete' value={{ _id }}> Delete Album </button>
+          <button type='submit' name="_id" class='edit' value={{ _id }}> Edit Album </button>
+        </li>
+        </form>
+        {{ /albums }}
+      </ul>
+    </section>
+  </body>
+</html>

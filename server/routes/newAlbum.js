@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
 
 router.post('/add', (req, res) => {
   let newAlbum = new Album(req.body);
-  console.log(newAlbum);
   newAlbum.save(function(err) {
     if (err) console.log("ERROR")
   })

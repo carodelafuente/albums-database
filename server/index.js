@@ -9,6 +9,10 @@ const morgan = require("morgan");
 const session = require("express-session");
 const mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcryptjs');
+const flash = require('express-flash-messages');
 
 const app = express();
 
@@ -41,8 +45,33 @@ mongoose.connection.on("error", function handleDBErrors(err) {
   console.error("DB Error", err);
 })
 
-app.use("/", require("./routes/newAlbum"));
+app.use('/', require("./routes/newAlbum"));
 app.use('/', require('./routes/albums'));
+app.use('/', require('./routes/userRoute'));
+
+
+
+
+// const hash = bcrypt.hashSync(password, 8);
+// bcrypt.compareSync(password, hash);
+
+
+
+// ... passport config
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+
+
+
 
 if (require.main === module) {
 

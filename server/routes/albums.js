@@ -14,14 +14,12 @@ router.get('/albums', (req, res) => {
 router.get("/edit/:id", (req, res) => {
   Album.findOne({ _id: req.params.id })
   .then((data) => {
-    console.log(data)
     res.render("edit", data)
   })
 })
 
 //edit route
 router.post('/edit/:id', (req, res) => {
-  console.log(req.body)
   Album.findByIdAndUpdate(req.params.id, { $set: req.body })
   .then((data) =>
     res.redirect("/albums"))
@@ -29,7 +27,6 @@ router.post('/edit/:id', (req, res) => {
 
 //delete route
 router.post('/delete', (req, res) => {
-  console.log('deleting', req.body)
   Album.remove({ _id: req.body._id }, function(err){
     if(!err){
       console.log("success")

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>CHANGEME</title>
+    <title>Album Collection</title>
     <link rel="stylesheet" href="/public/stylesheets/normalize.css">
     <link rel="stylesheet" href="/public/stylesheets/styles.css">
     <script src="/public/javascript/main.js" charset="utf-8"></script>
@@ -21,15 +21,20 @@
           <label for=""> Genre(s): </label>
           <input type="text" name="genre" value="">
           <label for=""> Did it go platinum? T/F </label>
-          <input type="text" name="platinumStatus" value="">
+          <div class='checkbox'> <input type="checkbox" name="platinumStatus" value="false">
+            <label for='platinumStatus'>No</label>
+          <input type="checkbox" name="platinumStatus" value="true">
+            <label for='platinumStatus'>Yes</label>
+          </div>
           <label for=""> Copies Sold: </label>
           <input type="text" name="copiesSold" value="">
           <button type="submit" name="button"> Submit </button>
         </form>
+        <a class='viewAlbums' href='/albums'> View Album Collections </a>
     </main>
 
     <footer>
-      <!-- This page was rendered in {{secondsToRender}}ms. --> 
+      <!-- This page was rendered in {{secondsToRender}}ms. -->
     </footer>
   </body>
 </html>

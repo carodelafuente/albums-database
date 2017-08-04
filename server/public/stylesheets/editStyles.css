@@ -15,6 +15,11 @@ form {
   padding: 20px;
 }
 
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
 label {
   color: indianred;
   margin: 10px;

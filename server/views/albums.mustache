@@ -29,12 +29,14 @@
           {{ /platinumStatus }}
           <h4>Copies sold:</h4>
           <span> {{ copiesSold }} </span>
-          <button type='submit' name="_id" class='delete' value={{ _id }}> Delete Album </button>
+          <span class='buttons'> <button type='submit' name="_id" class='delete' value={{ _id }}> Delete Album </button>
           <button type='submit' name="edit" class='edit'> <a href="/edit/{{ _id }}"> Edit Album  </a></button>
+        </span>
         </li>
         </form>
         {{ /albums }}
       </ul>
     </section>
+    <a class='viewAlbums' href='/'> Add a New Album </a>
   </body>
 </html>
